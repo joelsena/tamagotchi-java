@@ -30,7 +30,7 @@ public class Main extends JFrame {
 				nha.setNome(tf.getText());
 				jay1.dispose();
 				Tela2 jay = new Tela2(nha);
-				jay.setSize(400,240);
+				jay.setSize(400,270);
 				jay.setVisible(true);
 				//jay.getContentPane().setBackground(Color.cyan.darker());
 				jay.setLocationRelativeTo(null);
