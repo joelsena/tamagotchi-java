@@ -15,12 +15,12 @@ public class Main extends JFrame {
 	JButton jb7;
 	static Main jay1;
 	public Main() {
-		super("InÃ­cio");
+		super("Início");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
 		jl = new JLabel("Digite o nome do seu Tamagotchi:");
-		
 		jl.setForeground(Color.black);
+		jl.setFont(new Font("Arial", Font.BOLD, 13));
 		add(jl);
 		tf = new JTextField(20);
 		add(tf);

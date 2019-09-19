@@ -73,10 +73,8 @@ public class Tamagotchi {
 		}
 		nome.toLowerCase();
 		String cap = nome.substring(0,1).toUpperCase() + nome.substring(1).toLowerCase();
-		return "Nome: "+cap+"\nNÃ­vel De Comida: " + nDeCom + "\nNÃ­vel De Humor: " + nDeHum + "\nNÃ­vel De SaÃºde: " + nDeSau + "\nNÃ­vel De Energia: " + nDeEner
+		return "Nome: "+cap+"\nNível De Comida: " + nDeCom + "\nNível De Humor: " + nDeHum + "\nNível De Saúde: " + nDeSau + "\nNível De Energia: " + nDeEner
 				+ "\nIdade: "+idade;
-
-
 	}
 	public String getNome() {
 		return nome;
@@ -97,5 +95,6 @@ public class Tamagotchi {
 			}
 		}.start();
 	}
+	
 
 }

@@ -43,19 +43,18 @@ public class Tela2 extends JFrame{
 
 		painel.add(jl2);
 		jl3 = new JLabel(new ImageIcon("images/TmagothiGif1-2.gif"));
-		jl3.setBounds(86, 16, -1, -1);
-
+		jl3.setBounds(212, 5, 148, 108);
 		painel.add(jl3);
 
 
-		jl = new JLabel("\nEscolha uma das opÃ§Ã´es\n abaixo para o "+nha.getNome()+" fazer: ");
+		jl = new JLabel("\nEscolha uma das opções\n abaixo para o "+nha.getNome()+" fazer: ");
 		jl.setBounds(5, 124, 392, 16);
 		jl.setForeground(Color.black);
-		jl.setFont(new Font("cONSOLAS",Font.BOLD,13));
+		jl.setFont(new Font("Arial", Font.BOLD, 13));
 		//		add(jl);
 		painel.add(jl);
 		jb1 = new JButton("Crescer");
-		jb1.setBounds(5, 151, 93, 23);
+		jb1.setBounds(5, 151, 93, 29);
 		jb1.setForeground(Color.white);
 		jb1.setBackground(Color.black);
 		jb1.addActionListener(new ActionListener() {
@@ -68,7 +67,7 @@ public class Tela2 extends JFrame{
 
 		painel.add(jb1);
 		jb2 = new JButton("Comer");
-		jb2.setBounds(5, 185, 93, 23);
+		jb2.setBounds(5, 185, 93, 29);
 		jb2.setForeground(Color.white);
 		jb2.setBackground(Color.black);
 		jb2.addActionListener(new ActionListener() {
@@ -81,37 +80,40 @@ public class Tela2 extends JFrame{
 
 		painel.add(jb2);
 		jb3 = new JButton("Dormir");
-		jb3.setBounds(108, 185, 93, 23);
+		jb3.setBounds(108, 185, 93, 29);
 		jb3.setForeground(Color.white);
 		jb3.setBackground(Color.black);
 		jb3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nha.dormir();
 				jl2.setText(nha.verifiNive());
+				musicSleep();
 			}
 		});
 
 		painel.add(jb3);
-		jb4 = new JButton("Tomar RemÃ©dio");
-		jb4.setBounds(211, 151, 148, 23);
+		jb4 = new JButton("Tomar Remédio");
+		jb4.setBounds(211, 151, 148, 29);
 		jb4.setForeground(Color.white);
 		jb4.setBackground(Color.black);
 		jb4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nha.tomarReme();
 				jl2.setText(nha.verifiNive());
+				musicDrink();
 			}
 		});
 
 		painel.add(jb4);
 		jb6 = new JButton("Brincar");
-		jb6.setBounds(108, 151, 93, 23);
+		jb6.setBounds(108, 151, 93, 29);
 		jb6.setForeground(Color.white);
 		jb6.setBackground(Color.black);
 		jb6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nha.brincar();
 				jl2.setText(nha.verifiNive());
+				musicBrinks();
 			}
 		});
 		painel.add(jb6);
@@ -143,9 +145,47 @@ public class Tela2 extends JFrame{
 				}
 			}
 		}.start();
-			
-		
 	}
-
+		public void musicSleep() {
+			new Thread() {
+				public void run() {
+					try {
+						FileInputStream in = new FileInputStream("soundEffects/Snore.mp3");
+						ply= new Player(in);
+						ply.play();
+					} catch (JavaLayerException | FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+			}.start();
+	}
+		public void musicDrink() {
+			new Thread() {
+				public void run() {
+					try {
+						FileInputStream in = new FileInputStream("soundEffects/Drink.mp3");
+						ply = new Player(in);
+						ply.play();
+						
+					}catch(JavaLayerException | FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+			}.start();
+		}
+		public void musicBrinks() {
+			new Thread() {
+				public void run() {
+					try {
+						FileInputStream in = new FileInputStream("soundEffects/HuhHumm4.mp3");
+						ply = new Player(in);
+						ply.play();
+						
+					}catch(JavaLayerException | FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+			}.start();
+		}
 }
 
