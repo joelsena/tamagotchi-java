@@ -15,7 +15,7 @@ public class Main extends JFrame {
 	JButton jb7;
 	static Main jay1;
 	public Main() {
-		super("Início");
+		super("Inï¿½cio");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
 		jl = new JLabel("Digite o nome do seu Tamagotchi:");
@@ -42,7 +42,7 @@ public class Main extends JFrame {
 	}
 	public static void main(String[] args) {
 		jay1 = new Main();
-		jay1.setSize(250,120);
+		jay1.setSize(280,120);
 		jay1.setVisible(true);
 		jay1.getContentPane().setBackground(Color.cyan.darker());
 		jay1.setLocationRelativeTo(null);

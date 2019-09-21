@@ -21,19 +21,23 @@ public class Tamagotchi {
 		nDeCom++;
 		if(nDeEner<10) {
 			nDeEner++;
-		}else if(nDeCom>10) {
+		}if(nDeCom>10) {
 			adoecer();
 		}
 	}
 	public void dormir() {
+		if(nDeSau<10) {
+			nDeSau++;
+		}
 		if(nDeEner<10) {
 			nDeEner++;
-		}else if(nDeEner>10) {
-			
 		}
 	}
 	public void tomarReme() {
-		nDeSau=10;
+		if(nDeCom<10) {
+			nDeSau=10;
+		}
+		
 	}
 	public void adoecer() {
 		nDeSau--;
@@ -45,12 +49,9 @@ public class Tamagotchi {
 		}
 	}
 	public void brincar() {
-		if(nDeHum==10) {
-
-		}else if(nDeHum<10) {
+		if(nDeHum<10) {
 			nDeHum++;
 		}
-
 		nDeEner--;
 		if(nDeEner==0) {
 			musicDeath();
@@ -73,7 +74,7 @@ public class Tamagotchi {
 		}
 		nome.toLowerCase();
 		String cap = nome.substring(0,1).toUpperCase() + nome.substring(1).toLowerCase();
-		return "Nome: "+cap+"\nNível De Comida: " + nDeCom + "\nNível De Humor: " + nDeHum + "\nNível De Saúde: " + nDeSau + "\nNível De Energia: " + nDeEner
+		return "Nome: "+cap+"\nNï¿½vel De Comida: " + nDeCom + "\nNï¿½vel De Humor: " + nDeHum + "\nNï¿½vel De Saï¿½de: " + nDeSau + "\nNï¿½vel De Energia: " + nDeEner
 				+ "\nIdade: "+idade;
 	}
 	public String getNome() {
